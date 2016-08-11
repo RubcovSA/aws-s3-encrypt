@@ -4,8 +4,6 @@
   "description": "Encrypt objects into s3 busket",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "babel src -d lib",
     "start": "node index.js"
   },
   "repository": {
@@ -19,13 +17,7 @@
   },
   "homepage": "https://github.com/RubcovSA/aws-s3-encrypt",
   "dependencies": {
-    "aws-sdk": "^2.4.14",
-    "express": "^4.14.0"
+    "aws-sdk": "^2.4.14"
   },
-  "devDependencies": {
-    "babel-cli": "^6.11.4",
-    "babel-preset-es2015": "^6.13.2",
-    "gulp": "^3.9.1",
-    "gulp-babel": "^6.1.2"
-  }
+  "devDependencies": {}
 }

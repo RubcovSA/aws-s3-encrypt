@@ -1,6 +1,6 @@
 //import awsSdk from 'aws-sdk';
 console.log('started');
-console.log(process.env);
+//console.log(process.env);
 let awsSdk = require('aws-sdk');
 
 let logArr = [];
@@ -19,7 +19,7 @@ function putLogToS3() {
     Body: logArr.join('\n')
   }, (err, data) => {
     if(err) return log(err);
-    log(data);
+    log('Successfull put log to the new bucket');
   })
 }
 
@@ -129,8 +129,9 @@ let Migration = {
   }
 };
 
-console.log(env.DO_ENCRIPTION_MIGRATION === 'true' && env.PSA_S3_BUCKET_SSE_KMS_ENCRYPTED);
-env.DO_ENCRIPTION_MIGRATION === 'true' && env.PSA_S3_BUCKET_SSE_KMS_ENCRYPTED && Migration.run();
+let isDoingMigration = env.DO_ENCRIPTION_MIGRATION === 'true' && env.PSA_S3_BUCKET_SSE_KMS_ENCRYPTED;
+!isDoingMigration && console.log('Dont start migration, flag DO_ENCRIPTION_MIGRATION is false');
+isDoingMigration && Migration.run();
 
 //module.exports = Migration;
 

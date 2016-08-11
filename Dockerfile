@@ -10,9 +10,7 @@ COPY package.json /usr/src/app/
 RUN npm install
 
 # Bundle app source
-COPY index.js /usr/src/app
-COPY start.sh /usr/src/app
-COPY .env /usr/src/app
+COPY . /usr/src/app
 
 EXPOSE 8080
 CMD ["/bin/bash", "start.sh"]
