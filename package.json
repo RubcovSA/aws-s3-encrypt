@@ -1,0 +1,22 @@
+{
+  "name": "aws-s3-encrypt",
+  "version": "1.0.0",
+  "description": "Encrypt objects into s3 busket",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RubcovSA/aws-s3-encrypt.git"
+  },
+  "author": "Sergei Rubtcov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RubcovSA/aws-s3-encrypt/issues"
+  },
+  "homepage": "https://github.com/RubcovSA/aws-s3-encrypt",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
