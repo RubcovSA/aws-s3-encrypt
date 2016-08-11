@@ -1,4 +1,5 @@
-FROM node:argon
+#FROM node:argon
+FROM node:wheezy
 
 # Create app directory
 RUN mkdir -p /usr/src/app
@@ -9,7 +10,9 @@ COPY package.json /usr/src/app/
 RUN npm install
 
 # Bundle app source
-COPY . /usr/src/app
+COPY index.js /usr/src/app
+COPY start.sh /usr/src/app
+COPY .env /usr/src/app
 
 EXPOSE 8080
 CMD ["/bin/bash", "start.sh"]

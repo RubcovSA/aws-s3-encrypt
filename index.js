@@ -1,10 +1,13 @@
-import awsSdk from 'aws-sdk';
+//import awsSdk from 'aws-sdk';
+console.log('started');
+console.log(process.env);
+let awsSdk = require('aws-sdk');
 
 let logArr = [];
 let log = (...args) => {
   let str = args.join('');
   logArr.push((new Date()).toLocaleTimeString() + ':  ' + str);
-  sails.log.silly(str);
+  console.log(str);
 };
 
 function putLogToS3() {
@@ -126,6 +129,7 @@ let Migration = {
   }
 };
 
+console.log(env.DO_ENCRIPTION_MIGRATION === 'true' && env.PSA_S3_BUCKET_SSE_KMS_ENCRYPTED);
 env.DO_ENCRIPTION_MIGRATION === 'true' && env.PSA_S3_BUCKET_SSE_KMS_ENCRYPTED && Migration.run();
 
 //module.exports = Migration;
